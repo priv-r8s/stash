@@ -1217,6 +1217,8 @@ func (r *mutationResolver) SceneIncrementO(ctx context.Context, id string) (ret 
 		return 0, err
 	}
 
+	r.hookExecutor.ExecutePostHooks(ctx, sceneID, hook.SceneOUpdatePost, nil, nil)
+
 	return len(updatedTimes), nil
 }
 
@@ -1282,6 +1284,8 @@ func (r *mutationResolver) SceneAddO(ctx context.Context, id string, t []*time.T
 	}); err != nil {
 		return nil, err
 	}
+
+	r.hookExecutor.ExecutePostHooks(ctx, sceneID, hook.SceneOUpdatePost, nil, nil)
 
 	return &HistoryMutationResult{
 		Count:   len(updatedTimes),
