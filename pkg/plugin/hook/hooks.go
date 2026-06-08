@@ -13,6 +13,7 @@ const (
 	SceneCreatePost  TriggerEnum = "Scene.Create.Post"
 	SceneUpdatePost  TriggerEnum = "Scene.Update.Post"
 	SceneDestroyPost TriggerEnum = "Scene.Destroy.Post"
+	SceneOUpdatePost TriggerEnum = "Scene.OUpdate.Post"
 
 	ImageCreatePost  TriggerEnum = "Image.Create.Post"
 	ImageUpdatePost  TriggerEnum = "Image.Update.Post"
@@ -58,6 +59,7 @@ var AllHookTriggerEnum = []TriggerEnum{
 	SceneCreatePost,
 	SceneUpdatePost,
 	SceneDestroyPost,
+	SceneOUpdatePost,
 
 	ImageCreatePost,
 	ImageUpdatePost,
@@ -99,6 +101,7 @@ func (e TriggerEnum) IsValid() bool {
 		SceneCreatePost,
 		SceneUpdatePost,
 		SceneDestroyPost,
+		SceneOUpdatePost,
 
 		ImageCreatePost,
 		ImageUpdatePost,
